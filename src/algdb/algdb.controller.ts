@@ -136,7 +136,7 @@ export class AlgdbController {
         query.haschildren ? QueryObj.hasChildren = query.haschildren ==='true' : null
         const pagesize:number = Number(query.size) || 20
         const page:number = Number(query.page) || 1
-        const total = await this.puzzleSetModel.find(QueryObj).count().exec()
+        const total = await this.puzzleSetModel.find(QueryObj).countDocuments().exec()
         const puzzlesets = await this.puzzleSetModel.find(QueryObj).populate('').limit(pagesize).skip((page-1)*pagesize).exec()
         const lastpage = Math.floor(total/pagesize) + 1
         return {
@@ -164,7 +164,7 @@ export class AlgdbController {
         query.subset ? QueryObj.puzzleSubSet = query.subset : null
         const pagesize:number = Number(query.size) || 20
         const page:number = Number(query.page) || 1
-        const total = await this.puzzleSubSetModel.find(QueryObj).count().exec()
+        const total = await this.puzzleSubSetModel.find(QueryObj).countDocuments().exec()
         const puzzlesubsets = await this.puzzleSubSetModel.find(QueryObj).populate('').limit(pagesize).skip((page-1)*pagesize).exec()
         const lastpage = Math.floor(total/pagesize) + 1
         return {
@@ -191,7 +191,7 @@ export class AlgdbController {
         query.case ? QueryObj.caseName = query.case : null
         const pagesize:number = Number(query.size) || 20
         const page:number = Number(query.page) || 1
-        const total = await this.caseGroupModel.find(QueryObj).count().exec()
+        const total = await this.caseGroupModel.find(QueryObj).countDocuments().exec()
         const caseGroups = await this.caseGroupModel.find(QueryObj).populate('').limit(pagesize).skip((page-1)*pagesize).exec()
         const lastpage = Math.floor(total/pagesize) + 1
         return {
@@ -218,7 +218,7 @@ export class AlgdbController {
         query.case ? QueryObj.caseName = query.case : null
         const pagesize:number = Number(query.size) || 20
         const page:number = Number(query.page) || 1
-        const total = await this.caseModel.find(QueryObj).count().exec()
+        const total = await this.caseModel.find(QueryObj).countDocuments().exec()
         const cases = await this.caseModel.find(QueryObj).populate('').limit(pagesize).skip((page-1)*pagesize).exec()
         const lastpage = Math.floor(total/pagesize) + 1
         return {

@@ -3,6 +3,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors()
   const options = new DocumentBuilder()
     .setTitle('CubeNode服务API')
     .setDescription('The cats API description')

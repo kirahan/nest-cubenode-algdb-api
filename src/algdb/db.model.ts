@@ -69,7 +69,7 @@ export class algStats{
 }
 
 @modelOptions({
-    schemaOptions:{collection:'puzzles'}
+    schemaOptions:{collection:'puzzlesets'}
 })
 export class algpuzzleSet{
     @prop()
@@ -94,9 +94,6 @@ export class algpuzzleSet{
     public children?:string[]
 
     @prop()
-    public puzzleShortName?:string
-
-    @prop()
     public imageSrc?:string
 
     @prop()
@@ -105,7 +102,7 @@ export class algpuzzleSet{
 
 
 @modelOptions({
-    schemaOptions:{collection:'puzzles'}
+    schemaOptions:{collection:'puzzlesubsets'}
 })
 export class algpuzzleSubSet{
     @prop()
@@ -126,11 +123,6 @@ export class algpuzzleSubSet{
     @prop()
     public shortName?:string
 
-    @prop()
-    public parentShortName?:string
-
-    @prop()
-    public puzzleShortName?:string
 
     @prop()
     public imageSrc?:string
@@ -141,7 +133,7 @@ export class algpuzzleSubSet{
 
 
 @modelOptions({
-    schemaOptions:{collection:'puzzles'}
+    schemaOptions:{collection:'casegroups'}
 })
 export class algcaseGroup{
     @prop()
@@ -163,10 +155,7 @@ export class algcaseGroup{
     public shortName?:string
 
     @prop()
-    public caseGroupShortName?:string
-
-    @prop()
-    public puzzleShortName?:string
+    public caseGroupWholeName?:string
 
     @prop()
     public caseAlgs?:object[]
@@ -179,7 +168,7 @@ export class algcaseGroup{
 }
 
 @modelOptions({
-    schemaOptions:{collection:'puzzles'}
+    schemaOptions:{collection:'cases'}
 })
 export class algCase{
     @prop()
@@ -201,10 +190,8 @@ export class algCase{
     public shortName?:string
 
     @prop()
-    public caseGroupShortName?:string
+    public caseGroupWholeName?:string
 
-    @prop()
-    public puzzleShortName?:string
 
     @prop()
     public caseAlgs?:object[]
