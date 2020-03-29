@@ -11,7 +11,7 @@ async function bootstrap() {
     .addTag('目录')
     .build();
   const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('api-docs', app, document);
+  SwaggerModule.setup('api/cubenode/api-docs', app, document);
   await app.listen(3000);
 }
 bootstrap();

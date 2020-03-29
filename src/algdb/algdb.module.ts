@@ -4,7 +4,8 @@ import { TypegooseModule } from "nestjs-typegoose";
 import {algPuzzles, algAllClass, algtopCaseGroups, algStats, algpuzzleSet, algpuzzleSubSet, algcaseGroup, algCase, ALG } from './db.model';
 @Module({
   imports: [
-    TypegooseModule.forRoot('mongodb://algdb:xiaoye520@localhost:27017/algdb',
+    TypegooseModule.forRoot('mongodb://localhost/algdb',
+    // TypegooseModule.forRoot('mongodb://algdb:xiaoye520@localhost/algdb',
     {
         useNewUrlParser:true,
         useFindAndModify:false,

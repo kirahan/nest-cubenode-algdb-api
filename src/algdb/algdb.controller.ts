@@ -44,7 +44,7 @@ class puzzleCaseQuery {
 }
 
 
-@Controller('algdb')
+@Controller('api/cubenode/algdb')
 @ApiTags('algdb')
 export class AlgdbController {
     // constructor( @InjectModel(Puzzle) private  readony puzzleModel : ReturnModelType<typeof Puzzle>) {
@@ -232,18 +232,4 @@ export class AlgdbController {
     }
 
 
-
-
-
-
-    @Post()
-    // api title
-    @ApiOperation({summary:'创建'})
-    // 加上装饰器才能知道是需要什么数据，而且顺序不重要了
-    create(@Body() body:CreatePost,@Query() query, @Param() params){
-        return {
-            success : true,
-            data : 'hello'
-        }
-    }
 }
